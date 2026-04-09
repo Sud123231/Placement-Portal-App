@@ -25,3 +25,9 @@ dump.rdb
 # OS
 .DS_Store
 Thumbs.db
+
+#uploads
+uploads/
+
+#celerybeat schedule
+celerybeat-schedule
