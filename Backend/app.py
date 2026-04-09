@@ -71,7 +71,7 @@ def seed_admin():
 
     user = User(
         role="Admin",
-        email="dummyemail",
+        email="admin123@gmail.com",
         password=generate_password_hash("admin123"),
     )
     db.session.add(user)
