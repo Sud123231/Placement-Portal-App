@@ -11,6 +11,9 @@ import student from "/src/views/Student.vue";
 import viewcompany from "/src/views/Viewcompany.vue";
 import driveapply from "/src/views/Driveapply.vue";
 import editstudentprofile from "/src/views/Editstudentprofile.vue";
+import studentapplication from "/src/views/Studentapplication.vue";
+import studenthistory from "/src/views/Studenthistory.vue";
+import updatestudentapplication from "/src/views/Updatestudentapplication.vue";
 
 const routes = [
     {
@@ -28,6 +31,10 @@ const routes = [
     {
         path: "/drives/:id",
         component: drivedetail
+    },
+    {
+        path: "/applications/:id",
+        component: studentapplication
     },
     {
         path: "/company/:id",
@@ -56,6 +63,14 @@ const routes = [
     {
         path: "/student/:id/edit",
         component: editstudentprofile
+    },
+    {
+        path: "/student/:id/history",
+        component: studenthistory
+    },
+    {
+        path: "/student/application/:id/update",
+        component: updatestudentapplication
     },
     {
         path: "/drives/:id/edit",
