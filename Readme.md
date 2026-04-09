@@ -50,27 +50,41 @@ It supports company onboarding, placement drive lifecycle management, student ap
 
 ```text
 Placement-Portal-App/
+|- .gitignore
+|- Readme.md
 |- Backend/
 |  |- app.py
+|  |- cache_utils.py
 |  |- config.py
+|  |- extensions.py
 |  |- models.py
+|  |- requirements.txt
 |  |- tasks.py
+|  |- migrations/
 |  |- routes/
+|  |  |- Application.py
 |  |  |- auth.py
 |  |  |- company.py
 |  |  |- drive.py
-|  |  |- student.py
-|  |  `- Application.py
+|  |  `- student.py
 |  `- uploads/
 |     |- resumes/
 |     `- exports/
-|- Frontend/
-|  |- src/
-|  |  |- router/
-|  |  |- services/
-|  |  `- views/
-|  `- package.json
-`- Readme.md
+`- Frontend/
+   |- .gitignore
+   |- index.css
+   |- index.html
+   |- package-lock.json
+   |- package.json
+   |- README.md
+   |- vite.config.js
+   |- public/
+   `- src/
+      |- App.vue
+      |- main.js
+      |- router/
+      |- services/
+      `- views/
 ```
 
 ## Prerequisites
@@ -90,7 +104,7 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
-Create `Backend/.env`:
+Preferred: create an external env file (for example `C:\secure\placement-portal.env`) and point `PPA_ENV_FILE` to it.
 
 ```env
 SECRET_KEY=replace-with-strong-secret
@@ -111,10 +125,7 @@ Recommended for viva: keep secrets outside project folder
 
 1. Create an external env file, for example: `C:\secure\placement-portal.env`
 2. Put your real secrets there (not inside project).
-3. Either:
-   - set `PPA_ENV_FILE` explicitly, or
-   - place `.env` in a parent directory (auto-discovered), then run `python app.py` normally.
-4. Start backend with:
+3. Start backend with:
 
 ```powershell
 cd Backend
@@ -122,7 +133,7 @@ $env:PPA_ENV_FILE="C:\secure\placement-portal.env"
 python app.py
 ```
 
-`PPA_ENV_FILE` takes priority. If not set, backend auto-loads the first `.env` found while walking up parent directories from `Backend/`.
+`PPA_ENV_FILE` takes priority. If not set, backend falls back to the default path defined in `Backend/config.py` (`Path(__file__).resolve().parents[3] / ".env"`), so setting `PPA_ENV_FILE` explicitly is the reliable option.
 
 Run backend API:
 
