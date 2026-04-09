@@ -7,6 +7,10 @@ import company from "/src/views/Company.vue";
 import createdrive from "/src/views/Createdrive.vue";
 import driveapplications from "/src/views/Driveapplications.vue";
 import editdrive from "/src/views/Editdrive.vue";
+import student from "/src/views/Student.vue";
+import viewcompany from "/src/views/Viewcompany.vue";
+import driveapply from "/src/views/Driveapply.vue";
+import editstudentprofile from "/src/views/Editstudentprofile.vue";
 
 const routes = [
     {
@@ -30,12 +34,28 @@ const routes = [
         component: company
     },
     {
+        path: "/student/:id",
+        component: student
+    },
+    {
         path: "/company/:id/drives/create",
         component: createdrive
     },
     {
         path: "/drives/:id/applications",
         component: driveapplications
+    },
+    {
+        path: "/companies/:id",
+        component: viewcompany
+    },
+    {
+        path: "/drives/:id/apply",
+        component: driveapply
+    },
+    {
+        path: "/student/:id/edit",
+        component: editstudentprofile
     },
     {
         path: "/drives/:id/edit",
