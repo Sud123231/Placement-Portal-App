@@ -71,7 +71,6 @@ Placement-Portal-App/
 |     |- resumes/
 |     `- exports/
 `- Frontend/
-   |- .gitignore
    |- index.css
    |- index.html
    |- package-lock.json
@@ -80,6 +79,7 @@ Placement-Portal-App/
    |- vite.config.js
    |- public/
    `- src/
+      |- .gitignore
       |- App.vue
       |- main.js
       |- router/
