@@ -1,8 +1,8 @@
 # Placement Portal App
 
-A full-stack campus placement management platform with role-based access for Admin, Company, and Student users.
+Placement Portal App is a full-stack campus recruitment platform with role-based access for Admin, Company, and Student users.
 
-It supports company onboarding, placement drive lifecycle management, student applications with resume upload, application status tracking, async CSV export, and scheduled email notifications.
+The system supports company onboarding, placement drive lifecycle management, student applications with resume upload, application status tracking, asynchronous CSV export, and scheduled notifications.
 
 ## Features
 
@@ -71,6 +71,7 @@ Placement-Portal-App/
 |     |- resumes/
 |     `- exports/
 `- Frontend/
+   |- .gitignore
    |- index.css
    |- index.html
    |- package-lock.json
@@ -104,7 +105,7 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
-Preferred: create an external env file (for example `C:\secure\placement-portal.env`) and point `PPA_ENV_FILE` to it.
+Create `Backend/.env`:
 
 ```env
 SECRET_KEY=replace-with-strong-secret
@@ -121,23 +122,19 @@ MAIL_USERNAME=your-email@example.com
 MAIL_PASSWORD=your-app-password
 ```
 
-Recommended for viva: keep secrets outside project folder
-
-1. Create an external env file, for example: `C:\secure\placement-portal.env`
-2. Put your real secrets there (not inside project).
-3. Start backend with:
+If you keep environment variables in a file outside `Backend/.env`, set `PPA_ENV_FILE` before starting the server:
 
 ```powershell
 cd Backend
 $env:PPA_ENV_FILE="C:\secure\placement-portal.env"
-python app.py
 ```
 
-`PPA_ENV_FILE` takes priority. If not set, backend falls back to the default path defined in `Backend/config.py` (`Path(__file__).resolve().parents[3] / ".env"`), so setting `PPA_ENV_FILE` explicitly is the reliable option.
+If you are using `Backend/.env`, you can skip setting `PPA_ENV_FILE`.
 
-Run backend API:
+Run the backend API:
 
 ```powershell
+cd Backend
 python app.py
 ```
 
@@ -177,7 +174,7 @@ npm install
 npm run dev
 ```
 
-Frontend runs at `http://localhost:5173` (Vite default).
+The frontend runs at `http://localhost:5173` (Vite default).
 
 ## Default Seeded Admin
 
@@ -186,7 +183,7 @@ On first backend run, an admin account is auto-seeded:
 - Email: `admin123@gmail.com`
 - Password: `admin123`
 
-Change this in production.
+Update these credentials in production.
 
 ## Key Environment Variables
 
