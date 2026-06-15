@@ -26,8 +26,8 @@
 
         <hr class="divider" />
 
-        <h4 class="info">Student Name: {{ studentName }}</h4>
-        <h4 class="info">Department: {{ department }}</h4>
+        <h4 class="info"><strong>Student Name</strong>: {{ studentName }}</h4>
+        <h4 class="info"><strong>Department</strong>: {{ department }}</h4>
 
         <div class="table-wrap">
           <table>
@@ -184,7 +184,7 @@ onMounted(() => {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: sans-serif;
 }
 
 .page {
