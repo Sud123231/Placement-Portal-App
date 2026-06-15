@@ -1,3 +1,4 @@
+<!-- Front page of the app -->
 <template>
   <div class="home-page">
 
