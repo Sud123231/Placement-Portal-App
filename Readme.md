@@ -92,7 +92,7 @@ Placement-Portal-App/
 
 - Python 3.10+
 - Node.js 18+ (or newer LTS)
-- Redis server (local or Docker)
+- Redis server (local)
 
 ## Setup and Run
 
@@ -101,7 +101,7 @@ Placement-Portal-App/
 ```powershell
 cd Backend
 python -m venv venv
-.\venv\Scripts\Activate.ps1
+venv/bin/activate
 pip install -r requirements.txt
 ```
 
@@ -142,10 +142,10 @@ Backend runs at `http://127.0.0.1:5000`.
 
 ### 2. Start Redis
 
-If Redis is not already running, you can use Docker:
+Run this Command in wsl:
 
 ```powershell
-docker run -d --name placement-redis -p 6379:6379 redis:7
+redis-server
 ```
 
 ### 3. Start Celery worker
@@ -153,7 +153,6 @@ docker run -d --name placement-redis -p 6379:6379 redis:7
 From `Backend/`:
 
 ```powershell
-$env:PPA_ENV_FILE="C:\secure\placement-portal.env"
 celery -A app.celery worker --loglevel=info --pool=solo
 ```
 
@@ -162,7 +161,6 @@ celery -A app.celery worker --loglevel=info --pool=solo
 From `Backend/` in another terminal:
 
 ```powershell
-$env:PPA_ENV_FILE="C:\secure\placement-portal.env"
 celery -A app.celery beat --loglevel=info
 ```
 
