@@ -14,10 +14,15 @@ import editstudentprofile from "/src/views/Editstudentprofile.vue";
 import studentapplication from "/src/views/Studentapplication.vue";
 import studenthistory from "/src/views/Studenthistory.vue";
 import updatestudentapplication from "/src/views/Updatestudentapplication.vue";
+import frontpage from "/src/views/Frontpage.vue"
 
 const routes = [
     {
         path: "/",
+        component: frontpage
+    },
+    {
+        path: '/register',
         component: register
     },
     {

@@ -36,7 +36,7 @@
                  <button type="submit" class="submit-btn">LOGIN</button>
               </div>
 
-              <p>Don't Have an account? <router-link to="/">Register</router-link></p>
+              <p>Don't Have an account? <router-link to="/register">Register</router-link></p>
           </form>
         </div>
     </div>
@@ -123,6 +123,7 @@ const handleLogin = async () => {
   border-radius: 10px;
   transition: transform 0.3s ease-in-out;
   padding-bottom: 20px;
+  margin-bottom: 100px;
 }
 
 #container:hover {

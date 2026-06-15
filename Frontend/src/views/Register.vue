@@ -122,6 +122,7 @@ const handleRegister = async () => {
 
 #container {
   width: 400px;
+  margin-top:40px;
   background-color: white;
   border-radius: 10px;
   padding-bottom: 20px;

@@ -168,7 +168,7 @@ const exportHistory = async () => {
     throw new Error('Export is taking longer than expected. Try again in a moment.');
   } catch (err) {
     exportError.value =
-      err.response?.data?.message || err.message || 'Unable to export right now.';
+      err.response?.data?.message || 'Unable to export';
   } finally {
     exporting.value = false;
   }

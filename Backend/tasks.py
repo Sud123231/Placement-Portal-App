@@ -227,7 +227,7 @@ def export_student_applications_csv(student_id):
                     "Salary (INR)",
                     "Location",
                     "Remarks"
-                ]
+                ]                                        
             )
 
             applications = Application.query.filter_by(student_id=student_id).all()
